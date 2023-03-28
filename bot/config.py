@@ -5,7 +5,7 @@ from pathlib import Path
 config_dir = Path(__file__).parent.parent.resolve() / "config"
 
 # load yaml config
-with open(config_dir / "config.yml", 'r') as f:
+with open(config_dir / "config.yml", 'r', encoding='UTF-8') as f:
     config_yaml = yaml.safe_load(f)
 
 # load .env config
@@ -21,9 +21,9 @@ enable_message_streaming = config_yaml.get("enable_message_streaming", True)
 mongodb_uri = f"mongodb://mongo:{config_env['MONGODB_PORT']}"
 
 # chat_modes
-with open(config_dir / "chat_modes.yml", 'r') as f:
+with open(config_dir / "chat_modes.yml", 'r', encoding='UTF-8') as f:
     chat_modes = yaml.safe_load(f)
 
 # models
-with open(config_dir / "models.yml", 'r') as f:
+with open(config_dir / "models.yml", 'r', encoding='UTF-8') as f:
     models = yaml.safe_load(f)
